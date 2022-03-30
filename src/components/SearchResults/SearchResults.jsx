@@ -6,7 +6,7 @@ import { put } from '../../services/apiService';
 import './styles.scss';
 
 const SearchResults = () => {
-  const { searchResults, setSearchResults, setStarredCount, starredCount } = useContext(AppContext);
+  const { searchResults, setSearchResults, updateStarredCount, starredCount } = useContext(AppContext);
 
   const readableAddress = (address) => {
     if (!address) { return null }
@@ -31,7 +31,7 @@ const SearchResults = () => {
     }
 
     put(match).then(({ data }) => {
-      setStarredCount(count);
+      updateStarredCount(count);
       
       const updatedResults = searchResults;
       updatedResults.splice(matchIndex, 1, data)
