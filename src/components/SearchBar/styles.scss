@@ -1,0 +1,16 @@
+.search-bar {
+  &-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+    span {
+      font-style: italic;
+    }
+  }
+
+  &-input {
+    max-width: 30rem;
+  }
+}
